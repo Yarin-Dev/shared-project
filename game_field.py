@@ -12,7 +12,6 @@ def get_solider_cells(x, y):
 
 def create_board():
     grid = []
-    mine_counter = 0
     for i in range(BOARD_ROWS):
         row_to_add = []
         for j in range(BOARD_COLS):
