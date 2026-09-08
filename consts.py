@@ -1,6 +1,17 @@
-[[0, 0, 0],
- [0, 0, 0],
- [0, 0, 0]]
+"""
+
+[2, 1, 0, 0]
+[0, 0, 1, 0]
+[0, 1, 0, 0]
+[0, 0, 0, 3]
+
+
+"""
+
+EMPTY_CELL = 0
+MINE_CELL = 1
+SOLDIER_CELL = 2
+FLAG_CELL = 3
 
 BACKGROUND_COLOR = (138, 201, 38)
 
@@ -24,6 +35,8 @@ FLAG_ROWS = 3
 FLAG_COLS = 4
 flag_row = BOARD_ROWS - FLAG_ROWS
 flag_col = BOARD_COLS - FLAG_COLS
+FLAG_POS = (FLAG_ROWS, FLAG_COLS)
+
 
 MINES_COUNT = 20
 MINE_ROWS = 1
