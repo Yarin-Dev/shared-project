@@ -44,9 +44,10 @@ GRASS_COUNT = 20
 GRASS_ROWS = 3
 GRASS_COLS = 3
 
-GRASS_IMG = "images/grass.png"
+GRASS_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/grass.png"
 GRASS_HEIGHT = GRASS_COLS * CELL_SIZE
 GRASS_WIDTH = GRASS_ROWS * CELL_SIZE
 
-SOLDIER_IMG = "images/soldier_night.png"
-MINE_IMG = "images/mine.png"
+SOLDIER_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier.png"
+SOLDIER_NIGHT_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier_night.png"
+MINE_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/mine.png"

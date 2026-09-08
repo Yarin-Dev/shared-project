@@ -1,5 +1,6 @@
 import pygame
 
+import consts
 from consts import SOLIDER_POSITION
 
 class Solider:
@@ -7,7 +8,7 @@ class Solider:
     def __init__(self):
         self.x = SOLIDER_POSITION[0]
         self.y = SOLIDER_POSITION[1]
-        self.image_path = 'images/solider.png'
+        self.image_path = consts.SOLDIER_IMG
 
     def move(self, new_x, new_y):
         self.x = new_x

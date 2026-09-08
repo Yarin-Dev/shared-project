@@ -36,14 +36,15 @@ def main():
         if night_mode:
             Screen.hidden_screen(board)
             Screen.blit_night(n)
-            solider.change_image("images/solider.png")
+            solider.change_image(consts.SOLDIER_NIGHT_IMG)
 
             if pygame.time.get_ticks() - night_start_time >= 1000:
                 night_mode = False
+                solider.change_image(consts.SOLDIER_IMG)
         else:
             Screen.draw_background()
             Screen.blit_grass(grass)
-
+        Screen.blit_solider(solider)
         # Update display - without input update everything
 
         pygame.display.update()

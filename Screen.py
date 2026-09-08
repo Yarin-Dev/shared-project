@@ -75,3 +75,18 @@ def blit_night(b):
 # לחישוב המשבצות של רגלי הדמות
 #מתודות לציור האובייקטים על המסך
 
+def blit_solider(solider):
+    image = pygame.image.load(solider.image_path)
+
+    image = pygame.transform.scale(
+        image,
+        (
+            consts.CELL_SIZE * consts.SOLDIER_COLS,
+            consts.CELL_SIZE * consts.SOLDIER_ROWS
+        )
+    )
+
+    x = solider.y * consts.CELL_SIZE
+    y = solider.x * consts.CELL_SIZE
+
+    screen.blit(image, (x, y))
