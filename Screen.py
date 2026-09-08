@@ -13,6 +13,7 @@ screen = pygame.display.set_mode(
 def draw_background():
     screen.fill(consts.BACKGROUND_COLOR)
     pygame.display.flip()
+
 #מיקומים רנדומלים לשיחים
 def grass_location():
     b = {}
@@ -32,7 +33,7 @@ def blit_grass(b):
     for k,v in b.items():
         screen.blit(k, v)
 
-#מתודה לציור רשת המטריצה והמוקשים
+#מתודה לציור רשת המטריצה
 def hidden_screen (board):
     screen.fill(consts.BACKGROUND_COLOR)
     gap = 1
@@ -45,41 +46,19 @@ def hidden_screen (board):
             pygame.draw.rect(screen, consts.BLACK,
             pygame.Rect(x_pos- gap, y_pos- gap, consts.CELL_SIZE- gap, consts.CELL_SIZE- gap))
 
-            if board[row][col] == consts.MINE_CELL:
-                mine = pygame.transform.scale(pygame.image.load(consts.MINE_IMG),
-                (consts.CELL_SIZE * consts.MINE_ROWS, consts.CELL_SIZE* consts.MINE_COLS))
-                rect = mine.get_rect(
-                        topleft=(x_pos, y_pos))
-                screen.blit(mine, rect)
-
-            if board[row][col] == consts.SOLDIER_CELL:
-                soldier_night = pygame.transform.scale(pygame.image.load(consts.SOLDIER_IMG),
-                (consts.CELL_SIZE * consts.MINE_ROWS, consts.CELL_SIZE* consts.MINE_COLS))
-                rect = soldier_night.get_rect(topleft=(x_pos, y_pos))
-                screen.blit(soldier_night, rect)
 def night_location(board):
     b = {}
-    did =False
-
     for row in range(consts.BOARD_ROWS):
-        for col in range(consts.BOARD_COLS):
+        for col in range(0,consts.BOARD_COLS,3):
             x_pos = col * consts.CELL_SIZE
             y_pos = row * consts.CELL_SIZE
-
-
             if board[row][col] == consts.MINE_CELL:
                 mine = pygame.transform.scale(pygame.image.load(consts.MINE_IMG),
-                (consts.CELL_SIZE * consts.MINE_ROWS, consts.CELL_SIZE* consts.MINE_COLS))
+                (consts.CELL_SIZE * consts.MINE_COLS, consts.CELL_SIZE* consts.MINE_ROWS))
                 rect = mine.get_rect(
                         topleft=(x_pos, y_pos))
                 b.update({mine: rect})
 
-            if not did and board[row][col] == consts.SOLDIER_CELL:
-                soldier_night = pygame.transform.scale(pygame.image.load(consts.SOLDIER_IMG),
-                (consts.CELL_SIZE * consts.MINE_ROWS, consts.CELL_SIZE* consts.MINE_COLS))
-                rect = soldier_night.get_rect(topleft=(x_pos, y_pos))
-                b.update({soldier_night: rect})
-                did = True
     return b
 
 def blit_night(b):

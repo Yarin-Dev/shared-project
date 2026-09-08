@@ -26,8 +26,8 @@ def main():
 
 
         Screen.blit_grass(grass)
-        Screen.blit_night(n)
         Screen.hidden_screen(board)
+        Screen.blit_night(n)
 
         # Update display - without input update everything
         if event.type == pygame.KEYDOWN:
