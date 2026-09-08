@@ -15,4 +15,3 @@ class Solider:
 
     def change_image(self, new_path):
         self.image_path = new_path
-
