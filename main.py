@@ -1,6 +1,7 @@
 import pygame
 import consts
 import Screen
+import game_field
 
 
 def main():
@@ -11,6 +12,8 @@ def main():
     index = 0
     running = True
     grass = Screen.grass_location()
+    board = game_field.create_board()
+    n = Screen.night_location(board)
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -20,12 +23,17 @@ def main():
                 running = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 print(pygame.mouse.get_pos())
-        Screen.draw_background()
+
+
         Screen.blit_grass(grass)
+        Screen.blit_night(n)
+        Screen.hidden_screen(board)
 
         # Update display - without input update everything
+        if event.type == pygame.KEYDOWN:
 
-#gfg
+            Screen.hidden_screen()
+
         pygame.display.update()
 
         # Set the clock tick to be 60 times per second. 60 frames for second.
