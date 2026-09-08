@@ -1,5 +1,3 @@
-from token import AWAIT
-
 import pygame
 import consts
 import Screen
@@ -18,7 +16,10 @@ def main():
     board = game_field.create_board()
     n = Screen.night_location(board)
     solider = Solider()
+
     night_mode = False
+    night_start_time = 0
+
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -27,19 +28,18 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
-            keys = pygame.key.get_pressed()
-
-            if keys[pygame.K_SPACE]:
-                night_mode = True
-
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    night_mode = True
+                    night_start_time = pygame.time.get_ticks()
 
         if night_mode:
             Screen.hidden_screen(board)
             Screen.blit_night(n)
             solider.change_image("images/solider.png")
-            pygame.time.wait(1000)
-            night_mode = False
 
+            if pygame.time.get_ticks() - night_start_time >= 1000:
+                night_mode = False
         else:
             Screen.draw_background()
             Screen.blit_grass(grass)

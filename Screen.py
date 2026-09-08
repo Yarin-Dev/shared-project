@@ -12,7 +12,6 @@ screen = pygame.display.set_mode(
 #מתודה לציור רקע רגיל
 def draw_background():
     screen.fill(consts.BACKGROUND_COLOR)
-    pygame.display.flip()
 
 #מיקומים רנדומלים לשיחים
 def grass_location():
