@@ -25,7 +25,7 @@ def main():
 
         # Update display - without input update everything
 
-
+#gfg
         pygame.display.update()
 
         # Set the clock tick to be 60 times per second. 60 frames for second.
