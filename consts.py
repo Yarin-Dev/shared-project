@@ -33,6 +33,9 @@ FLAG_COLS = 4
 flag_row = BOARD_ROWS - FLAG_ROWS
 flag_col = BOARD_COLS - FLAG_COLS
 FLAG_POS = (FLAG_ROWS, FLAG_COLS)
+FLAG_WIDTH = FLAG_COLS*CELL_SIZE
+FLAG_HEIGHT = FLAG_ROWS*CELL_SIZE
+
 
 BACKGROUND_COLOR = (0,100,0)
 BLACK = (0,0,0)
@@ -51,3 +54,5 @@ GRASS_WIDTH = GRASS_ROWS * CELL_SIZE
 SOLDIER_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier.png"
 SOLDIER_NIGHT_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier_night.png"
 MINE_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/mine.png"
+FLAG_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/flag.png"
+

@@ -90,3 +90,29 @@ def blit_solider(solider):
     y = solider.x * consts.CELL_SIZE
 
     screen.blit(image, (x, y))
+
+
+def get_soldier_body_cells(x, y):
+    body_cells = []
+    for r in range(x, x + consts.SOLDIER_BODY_ROWS):
+        for c in range(y, y + consts.SOLDIER_FEET_ROWS):
+            body_cells.append((r, c))
+    return body_cells
+
+
+def get_soldier_feet_cells(x, y):
+    feet_cells = []
+    feet_row = x + consts.SOLDIER_BODY_ROWS
+    for c in range(y, y + consts.SOLDIER_FEET_ROWS):
+        feet_cells.append((feet_row, c))
+    return feet_cells
+
+
+def draw_flag():
+    flag = pygame.transform.scale(pygame.image.load(consts.FLAG_IMG),
+           (consts.FLAG_WIDTH,consts.FLAG_HEIGHT))
+    flag_x = consts.WINDOW_WIDTH - consts.FLAG_WIDTH
+    flag_y = consts.WINDOW_HEIGHT - consts.FLAG_HEIGHT - 5
+    rect = flag.get_rect(
+        topleft=(flag_x, flag_y))
+    screen.blit(flag, rect)
