@@ -22,7 +22,6 @@ def main():
                 print(pygame.mouse.get_pos())
         Screen.draw_background()
         Screen.blit_grass(grass)
-        if event.type == pygame.MOUSEBUTTONDOWN:
 
         # Update display - without input update everything
 
@@ -31,6 +30,7 @@ def main():
 
         # Set the clock tick to be 60 times per second. 60 frames for second.
         clock.tick(60)
+
 
     pygame.quit()
     quit()
