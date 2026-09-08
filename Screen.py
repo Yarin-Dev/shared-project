@@ -21,10 +21,10 @@ def grass_location():
         grass = pygame.image.load(consts.GRASS_IMG)
         sized_grass = pygame.transform.scale(grass, (
             consts.GRASS_WIDTH, consts.GRASS_HEIGHT))
-        grass_x = random.randrange(consts.WINDOW_WIDTH)
-        grass_y = random.randrange(consts.WINDOW_HEIGHT)
+        grass_x = random.randrange(consts.GRASS_WIDTH, consts.WINDOW_WIDTH-consts.GRASS_WIDTH)
+        grass_y = random.randrange(consts.GRASS_HEIGHT,consts.WINDOW_HEIGHT-consts.GRASS_HEIGHT)
         rect = grass.get_rect(
-                center=(grass_x, grass_y))
+                topleft=(grass_x, grass_y))
         b.update({sized_grass: rect})
     return b
 
@@ -42,9 +42,12 @@ def hidden_screen (board):
         for col in range(consts.BOARD_COLS):
             x_pos = col * consts.CELL_SIZE
             y_pos = row * consts.CELL_SIZE
-
             pygame.draw.rect(screen, consts.BLACK,
-            pygame.Rect(x_pos- gap, y_pos- gap, consts.CELL_SIZE- gap, consts.CELL_SIZE- gap))
+                             pygame.Rect(x_pos - gap, y_pos - gap,
+                                         consts.CELL_SIZE - gap,
+                                         consts.CELL_SIZE - gap))
+
+
 
 def night_location(board):
     b = {}
@@ -64,6 +67,8 @@ def night_location(board):
 def blit_night(b):
     for k,v in b.items():
         screen.blit(k, v)
+
+
 #יצירת שחקן חדש
 # לחישוב המשבצות של גוף הדמות
 
