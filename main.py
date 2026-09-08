@@ -10,7 +10,6 @@ def main():
     pygame.init()
     pygame.display.set_caption("Flag")
     clock = pygame.time.Clock()
-    index = 0
     running = True
     grass = Screen.grass_location()
     board = game_field.create_board()
@@ -33,6 +32,23 @@ def main():
                     night_mode = True
                     night_start_time = pygame.time.get_ticks()
 
+            dr, dc = 0, 0
+            keys = pygame.key.get_pressed()
+            if keys[pygame.K_UP]:
+                dr = -1
+            elif keys[pygame.K_DOWN]:
+                dr = 1
+
+            elif keys[pygame.K_LEFT]:
+                dc = -1
+
+            elif keys[pygame.K_RIGHT]:
+                dc = 1
+
+            if dr != 0 or dc != 0:
+                solider.move(solider.x + dr, solider.y + dc)
+
+
         if night_mode:
             Screen.hidden_screen(board)
             Screen.blit_night(n)
@@ -44,11 +60,13 @@ def main():
         else:
             Screen.draw_background()
             Screen.blit_grass(grass)
+
         Screen.blit_solider(solider)
+        Screen.draw_flag()
+
         # Update display - without input update everything
 
         pygame.display.update()
-
 
         # Set the clock tick to be 60 times per second. 60 frames for second.
         clock.tick(60)
@@ -56,6 +74,7 @@ def main():
 
     pygame.quit()
     quit()
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
