@@ -22,6 +22,8 @@ def main():
     night_start_time = 0
     hit_explosion = False
 
+    listed_keys = {}
+
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -40,6 +42,7 @@ def main():
             # player movement
             dr, dc = 0, 0
             keys = pygame.key.get_pressed()
+            handle_numbers(keys, listed_keys)
 
             if keys[pygame.K_UP]:
                 dr = -1
@@ -97,6 +100,29 @@ def main():
 
     pygame.quit()
     quit()
+
+def handle_numbers(keys, listed_keys):
+    wanted_keys = [pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4, pygame.K_5, pygame.K_6, pygame.K_7, pygame.K_8, pygame.K_9]
+    keys_to_check = []
+
+    for key in wanted_keys:
+        if keys[key]:
+            keys_to_check.append(key)
+
+    keys_to_check.extend([i for i in listed_keys.keys() if i not in keys_to_check])
+
+    for key in keys_to_check:
+        if keys[key]:
+            if not key in listed_keys:
+                listed_keys[key] = pygame.time.get_ticks()
+        else:
+            if key in listed_keys:
+                print(pygame.time.get_ticks() - listed_keys[key])
+                if pygame.time.get_ticks() - listed_keys[key] >= consts.LONG_CLICK:
+                    print("long click")
+                else:
+                    print("soft click")
+                del listed_keys[key]
 
 
 # Press the green button in the gutter to run the script.

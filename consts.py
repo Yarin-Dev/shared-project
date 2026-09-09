@@ -84,3 +84,6 @@ WELCOME_COLOR = (255, 255, 255)  # WHITE
 WELCOME_LOCATION = (10, 10)
 WELCOME_LINE1 = "Welcome to The Flag game"
 WELCOME_LINE2  = "Have Fun!"
+
+# Data
+LONG_CLICK = 800
