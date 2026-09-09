@@ -1,6 +1,7 @@
 import pygame
 
 import consts
+import Screen
 from consts import SOLIDER_POSITION
 
 class Solider:
@@ -16,3 +17,18 @@ class Solider:
 
     def change_image(self, new_path):
         self.image_path = new_path
+
+    def check_touch_flag(self):
+        body_cells = Screen.get_soldier_body_cells(self.x, self.y)
+        flag_cells = []
+        for row in range(consts.flag_row,consts.BOARD_ROWS):
+            for col in range(consts.flag_col,consts.BOARD_COLS):
+                flag_cells.append((row,col))
+
+
+        for cell in body_cells:
+            if cell in flag_cells:
+                return True
+
+        return False
+
