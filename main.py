@@ -61,6 +61,8 @@ def main():
             Screen.draw_background()
             Screen.blit_grass(grass)
 
+        if Solider.check_touch_flag(solider):
+
         Screen.blit_solider(solider)
         Screen.draw_flag()
 

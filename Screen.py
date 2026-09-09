@@ -126,9 +126,9 @@ def draw_explosion():
         (
             consts.CELL_SIZE * consts.MINE_COLS,
             consts.CELL_SIZE * consts.MINE_ROWS,
-        ),
+        )
     )
-screen.blit(sized_exp, mine_rect)
+    screen.blit(sized_exp, mine_rect)
 
 def blit_solider(solider):
     image = pygame.image.load(solider.image_path)

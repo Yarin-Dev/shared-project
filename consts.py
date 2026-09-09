@@ -47,16 +47,16 @@ GRASS_COUNT = 20
 GRASS_ROWS = 3
 GRASS_COLS = 3
 
-GRASS_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/grass.png"
+GRASS_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/grass.png"
 GRASS_HEIGHT = GRASS_COLS * CELL_SIZE
 GRASS_WIDTH = GRASS_ROWS * CELL_SIZE
 
-SOLDIER_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier.png"
-SOLDIER_NIGHT_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier_night.png"
-MINE_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/mine.png"
-FLAG_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/flag.png"
+SOLDIER_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/soldier.png"
+SOLDIER_NIGHT_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/soldier_night.png"
+MINE_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/mine.png"
+FLAG_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/flag.png"
 
-EXPLOSION_IMG = "explotion.png"
+EXPLOSION_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/explotion.png"
 FONT_NAME = "Calibri"
 
 LOSE_MESSAGE = "You Lost!"
@@ -74,7 +74,7 @@ WIN_LOCATION = (
     int(0.2 * WINDOW_WIDTH),
     int(WINDOW_HEIGHT / 2 - (WIN_FONT_SIZE / 2)),
 )
-WELCOME_MESSAGE = "Welcome to The Flag game.\nHave Fun!"
+WELCOME_MESSAGE = "Welcome to The Flag game./nHave Fun!"
 WELCOME_FONT_SIZE = int(0.04 * WINDOW_WIDTH)  # או גודל קבוע לפי לבחירתך, למשל 24
 WELCOME_COLOR = (255, 255, 255)  # WHITE
 WELCOME_LOCATION = (10, 10)
