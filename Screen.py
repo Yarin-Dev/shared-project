@@ -98,6 +98,10 @@ def draw_lose_message():
         consts.LOSE_LOCATION,
     )
 
+def draw_message(message, font_size, color, location):
+    font = pygame.font.SysFont(consts.FONT_NAME, font_size)
+    text_img = font.render(message, True, color)
+    screen.blit(text_img, location)
 
 def draw_win_message():
     draw_message(
