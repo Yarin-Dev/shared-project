@@ -47,12 +47,40 @@ GRASS_COUNT = 20
 GRASS_ROWS = 3
 GRASS_COLS = 3
 
-GRASS_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/grass.png"
 GRASS_HEIGHT = GRASS_COLS * CELL_SIZE
 GRASS_WIDTH = GRASS_ROWS * CELL_SIZE
 
-SOLDIER_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier.png"
-SOLDIER_NIGHT_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/soldier_night.png"
-MINE_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/mine.png"
-FLAG_IMG = "C:/Users/User/Desktop/Nizanim Python/shared-project/images/flag.png"
+# Images
+GRASS_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/grass.png"
+SOLDIER_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/soldier.png"
+SOLDIER_NIGHT_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/soldier_night.png"
+MINE_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/mine.png"
+FLAG_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/flag.png"
+EXPLOSION_IMG = "C:/Users/jbt/PycharmProjects/shared-project/images/explotion.png"
 
+# Messages
+FONT_NAME = "Calibri"
+LOSE_MESSAGE = "You Lost!"
+LOSE_FONT_SIZE = int(0.15 * WINDOW_WIDTH)
+LOSE_COLOR = BLACK
+LOSE_LOCATION = (
+    int(0.2 * WINDOW_WIDTH),
+    int(WINDOW_HEIGHT / 2 - (LOSE_FONT_SIZE / 2)),
+)
+
+# Win
+WIN_MESSAGE = "You Won!"
+WIN_FONT_SIZE = LOSE_FONT_SIZE
+WIN_COLOR = (89, 89, 89)
+WIN_LOCATION = (
+    int(0.2 * WINDOW_WIDTH),
+    int(WINDOW_HEIGHT / 2 - (WIN_FONT_SIZE / 2)),
+)
+
+
+# Welcome
+WELCOME_FONT_SIZE = int(0.02 * WINDOW_WIDTH)
+WELCOME_COLOR = (255, 255, 255)  # WHITE
+WELCOME_LOCATION = (10, 10)
+WELCOME_LINE1 = "Welcome to The Flag game"
+WELCOME_LINE2  = "Have Fun!"
