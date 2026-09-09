@@ -74,7 +74,8 @@ WIN_LOCATION = (
     int(0.2 * WINDOW_WIDTH),
     int(WINDOW_HEIGHT / 2 - (WIN_FONT_SIZE / 2)),
 )
-WELCOME_MESSAGE = "Welcome to The Flag game./nHave Fun!"
+WELCOME_LINE1 = "Welcome to The Flag game"
+WELCOME_LINE2  = "Have Fun!"
 WELCOME_FONT_SIZE = int(0.04 * WINDOW_WIDTH)  # או גודל קבוע לפי לבחירתך, למשל 24
 WELCOME_COLOR = (255, 255, 255)  # WHITE
 WELCOME_LOCATION = (10, 10)

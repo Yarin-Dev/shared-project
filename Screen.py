@@ -119,7 +119,7 @@ def draw_welcome_message():
 
 
 # ציור פיצוץ בלחיצה/דריכה על מוקש
-def draw_explosion():
+def draw_explosion(x,y):
     exp_img = pygame.image.load(consts.EXPLOSION_IMG)
     sized_exp = pygame.transform.scale(
         exp_img,
@@ -128,6 +128,8 @@ def draw_explosion():
             consts.CELL_SIZE * consts.MINE_ROWS,
         )
     )
+    mine_rect = sized_exp.get_rect(
+            topleft=(x, y))
     screen.blit(sized_exp, mine_rect)
 
 def blit_solider(solider):
